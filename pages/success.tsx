@@ -8,7 +8,7 @@ const SuccessPage = () => {
   const [randomNumber, setRandomNumber] = useState(undefined);
 
   useEffect(() => {
-    setRandomNumber(Math.floor(Math.random() * (999999 - 900000) + 900000));
+    setRandomNumber(Math.floor(Math.random() * (999999 - 100000) + 100000));
   }, []);
 
   return (

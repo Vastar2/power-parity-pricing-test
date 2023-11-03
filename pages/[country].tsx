@@ -10,6 +10,7 @@ import map from "../public/map.svg";
 import api from "../utils/api";
 import { PRODUCT_PRICE } from "../utils/constants";
 import { getParityPrice } from "../utils/utils";
+import { checkout } from "../utils/checkout";
 
 interface Params extends ParsedUrlQuery {
   country: Country;
@@ -142,11 +143,16 @@ const CountryPage = ({ country, parity }) => {
             </div>
             <button
               className="py-4 px-6 text-lg w-full bg-black text-white rounded-md hover:bg-gray-900"
-              onClick={() =>
-                alert(
-                  `its yours for USD ${isParityEnabled ? parityPrice : 500}`
-                )
-              }
+              onClick={() => {
+                checkout({
+                  lineItems: [
+                    {
+                      price: "price_1O8Q0ZKPwxHqQ37rsTlCQtVM",
+                      quantity: 1,
+                    },
+                  ],
+                });
+              }}
             >
               Buy now
             </button>

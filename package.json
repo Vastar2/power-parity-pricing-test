@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@stripe/react-stripe-js": "github:stripe/react-stripe-js",
-    "@stripe/stripe-js": "github:stripe/stripe-js",
     "@vercel/examples-ui": "^1.0.5",
     "dotenv": "^16.3.1",
     "next": "canary",
@@ -21,6 +20,7 @@
     "stripe": "^14.3.0"
   },
   "devDependencies": {
+    "@stripe/stripe-js": "^2.1.11",
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.28",
     "autoprefixer": "^10.4.14",
