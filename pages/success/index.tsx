@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import shirt from "../public/shirt.png";
-import map from "../public/map.svg";
+import shirt from "../../public/shirt.png";
+import map from "../../public/map.svg";
 import { useState, useEffect } from "react";
 
 const SuccessPage = () => {

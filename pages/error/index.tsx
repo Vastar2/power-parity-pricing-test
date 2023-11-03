@@ -1,7 +1,7 @@
 import Image from "next/image";
-import map from "../public/map.svg";
+import map from "../../public/map.svg";
 import { useState } from "react";
-import Form from "../components/ErrorForm";
+import Form from "../../components/ErrorForm";
 
 const ErrorPage = () => {
   const [errorData, setErrorData] = useState({

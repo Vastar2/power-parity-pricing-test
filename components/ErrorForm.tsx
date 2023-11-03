@@ -1,4 +1,4 @@
-import { onChange, onSubmit } from "../utils/handleForm";
+import { onChange, onSubmit } from "../utils";
 import { FC } from "react";
 import { FormData } from "../types";
 

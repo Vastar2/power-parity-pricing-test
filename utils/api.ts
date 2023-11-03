@@ -1,7 +1,7 @@
-import { PARITIES } from "./constants";
+import { PARITIES } from "./";
 import { Country } from "../types";
 
-const api = {
+export const api = {
   parity: {
     list: async (): Promise<Country[]> => Object.keys(PARITIES) as Country[],
     fetch: async (country: Country): Promise<number> => {
@@ -9,4 +9,3 @@ const api = {
     },
   },
 };
-export default api;
