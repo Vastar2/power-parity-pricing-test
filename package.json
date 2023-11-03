@@ -10,7 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@stripe/react-stripe-js": "github:stripe/react-stripe-js",
     "@vercel/examples-ui": "^1.0.5",
     "dotenv": "^16.3.1",
     "next": "canary",
