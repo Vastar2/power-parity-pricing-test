@@ -1,8 +1,9 @@
-import { getResultPrice } from "../../common/utils";
+import { getResultPrice, resultPrice } from "../../common/utils";
 import { checkout } from "../../common/utils";
 import Image from "next/image";
 import { PRODUCT_PRICE } from "../../common/utils";
 import { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const PurchaseContainer = ({ country, parity }) => {
   const [isParityEnabled, setIsParityEnabled] = useState<boolean>(false);
@@ -27,16 +28,20 @@ const PurchaseContainer = ({ country, parity }) => {
             <h4 className="font-semibold text-xl">Alpha Black shirt</h4>
             <h5 className="text-gray-700">Limited edition</h5>
           </div>
-          {isParityEnabled ? (
-            <div className="flex flex-col items-start font-bold text-lg leading-none">
-              <span className="text-gray-500 text-sm line-through">
-                USD {PRODUCT_PRICE}
-              </span>
+          <div className="flex flex-col items-start font-bold text-lg leading-none">
+            <span
+              className={twMerge(
+                isParityEnabled
+                  ? "text-gray-500 text-sm line-through"
+                  : "font-bold text-lg"
+              )}
+            >
+              USD {PRODUCT_PRICE}
+            </span>
+            {isParityEnabled && (
               <span className="text-green-500">USD {finalPrice}</span>
-            </div>
-          ) : (
-            <h4 className="font-bold text-lg">USD {PRODUCT_PRICE}</h4>
-          )}
+            )}
+          </div>
         </div>
       </div>
       <div className="p-4 gap-4 flex flex-col justify-center items-center border-b">

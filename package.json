@@ -16,7 +16,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-hot-toast": "^2.4.1",
-    "stripe": "^14.3.0"
+    "stripe": "^14.3.0",
+    "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
     "@stripe/stripe-js": "^2.1.11",
