@@ -2,15 +2,22 @@ import { getResultPrice } from "../utils";
 import { checkout } from "../utils";
 import Image from "next/image";
 import { PRODUCT_PRICE } from "../utils";
-import { getParityPrice } from "../utils";
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const PurchaseContainer = ({ country, parity }) => {
   const [isParityEnabled, setIsParityEnabled] = useState<boolean>(false);
-  const parityPrice = useMemo(
-    () => getParityPrice(PRODUCT_PRICE, parity),
-    [parity]
-  );
+  const [finalPrice, setFinalPrice] = useState(0);
+
+  useEffect(() => {
+    async function getProductCost() {
+      const response = await fetch(
+        `/api/cost?price=${PRODUCT_PRICE}&parity=${parity}`
+      );
+      const data = await response.json();
+      setFinalPrice(data);
+    }
+    getProductCost();
+  }, [parity]);
 
   return (
     <section className="border border-gray-300 bg-white rounded-lg shadow-lg mt-16 w-full max-w-[480px] hover:shadow-2xl transition pt-16 lg:pt-24">
@@ -25,7 +32,7 @@ const PurchaseContainer = ({ country, parity }) => {
               <span className="text-gray-500 text-sm line-through">
                 USD {PRODUCT_PRICE}
               </span>
-              <span className="text-green-500">USD {parityPrice}</span>
+              <span className="text-green-500">USD {finalPrice}</span>
             </div>
           ) : (
             <h4 className="font-bold text-lg">USD {PRODUCT_PRICE}</h4>
