@@ -1,4 +1,4 @@
-import { onChange, onSubmit } from "../utils";
+import { onChange, onSubmit } from "../../common/utils";
 import { FC } from "react";
 import { FormData } from "../types";
 

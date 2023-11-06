@@ -2,11 +2,11 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
 import type { ParsedUrlQuery } from "querystring";
 import { Layout } from "@vercel/examples-ui";
-import type { Country } from "../types";
+import type { Country } from "../common/types";
 import shirt from "../public/shirt.png";
 import map from "../public/map.svg";
-import { api } from "../utils";
-import PurchaseContainer from "../components/PurchaseContainer";
+import { api } from "../common/utils";
+import PurchaseContainer from "../common/components/PurchaseContainer";
 
 interface Params extends ParsedUrlQuery {
   country: Country;

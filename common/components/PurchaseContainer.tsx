@@ -1,7 +1,7 @@
-import { getResultPrice } from "../utils";
-import { checkout } from "../utils";
+import { getResultPrice } from "../../utils";
+import { checkout } from "../../utils";
 import Image from "next/image";
-import { PRODUCT_PRICE } from "../utils";
+import { PRODUCT_PRICE } from "../../utils";
 import { useEffect, useState } from "react";
 
 const PurchaseContainer = ({ country, parity }) => {
