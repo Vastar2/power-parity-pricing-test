@@ -1,4 +1,4 @@
-import { getResultPrice, resultPrice } from "../../common/utils";
+import { resultPrice } from "../../common/utils";
 import { checkout } from "../../common/utils";
 import Image from "next/image";
 import { PRODUCT_PRICE } from "../../common/utils";
@@ -75,7 +75,9 @@ const PurchaseContainer = ({ country, parity }) => {
             checkout({
               lineItems: [
                 {
-                  price: getResultPrice(isParityEnabled, country),
+                  price: isParityEnabled
+                    ? resultPrice[country] || resultPrice.default
+                    : resultPrice.full,
                   quantity: 1,
                 },
               ],
